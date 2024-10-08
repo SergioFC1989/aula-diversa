@@ -6,7 +6,8 @@ import InputSlider from "./input-slider/input-slider";
 import InputTextField from "./input-text-field/input-text-field";
 
 import { FormFieldsProps } from "@/utils/types";
-import TitleNav from "../title-nav/title-nav";
+import PageHeader from "../page-header/page-header";
+import InputDatePicker from "./input-date-picker/input-date-picker";
 
 interface FormProps {
   title?: string;
@@ -49,7 +50,7 @@ const Form = ({
 
   return (
     <>
-      <TitleNav title={title} />
+      <PageHeader title={title} />
       <form
         className="w-full flex flex-col gap-4"
         onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
@@ -65,6 +66,43 @@ const Form = ({
               <div className="w-full flex flex-col s:flex-row" key={field.name}>
                 {field.type === "text" && (
                   <InputTextField
+                    type="text"
+                    label={field.label}
+                    placeholder={field.placeholder}
+                    name={field.name}
+                    control={control}
+                    required={field.required}
+                    rows={field.rows}
+                    isMultiline={field.isMultiline}
+                  />
+                )}
+                {field.type === "number" && (
+                  <InputTextField
+                    type="number"
+                    label={field.label}
+                    placeholder={field.placeholder}
+                    name={field.name}
+                    control={control}
+                    required={field.required}
+                    rows={field.rows}
+                    isMultiline={field.isMultiline}
+                  />
+                )}
+                {field.type === "password" && (
+                  <InputTextField
+                    type="password"
+                    label={field.label}
+                    placeholder={field.placeholder}
+                    name={field.name}
+                    control={control}
+                    required={field.required}
+                    rows={field.rows}
+                    isMultiline={field.isMultiline}
+                  />
+                )}
+                {field.type === "email" && (
+                  <InputTextField
+                    type="email"
                     label={field.label}
                     placeholder={field.placeholder}
                     name={field.name}
@@ -93,6 +131,15 @@ const Form = ({
                     required={field.required}
                     options={field.options}
                     isMultiSelect={field.isMultiSelect}
+                  />
+                )}
+                {field.type === "date" && (
+                  <InputDatePicker
+                    label={field.label}
+                    name={field.name}
+                    control={control}
+                    placeholder={field.placeholder}
+                    required={field.required}
                   />
                 )}
               </div>

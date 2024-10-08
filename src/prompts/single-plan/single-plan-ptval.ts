@@ -1,9 +1,9 @@
-import { AnnualPlanProps } from "../utils/types";
+import { AnnualPlanProps } from "../../utils/types";
 
-export const generatePTVALSinglePlan = (data: AnnualPlanProps) => `
+export const generateSinglePlanPTVAL = (data: AnnualPlanProps) => `
 Crea un plan detallado para un curso escolar en el año corriente en Andalucía, dirigido a un alumno determinado con necesidades educativas especiales, basado en los tres ámbitos de desarrollo según la Orden del 19 de octubre de 2002 de la Junta de Andalucía, para la transición a la vida adulta laboral (PTVAL).
 
-Cada alumno tiene características únicas que deben ser tomadas en cuenta al diseñar las actividades y todo de manera individual. Hay que tener muy en cuenta los datos del alumno que adjunto a continuación para poder realizar el plan detallado:
+Cada alumno tiene características y discapacidades únicas que deben ser tomadas en cuenta al diseñar las actividades y todo de manera individual. Hay que tener muy en cuenta los datos del alumno que adjunto a continuación para poder realizar el plan detallado:
 ${(Object.keys(data) as (keyof AnnualPlanProps)[])
   .map((key) => `- ${key}: ${data[key] || "No especificado"}`)
   .join("\n")}

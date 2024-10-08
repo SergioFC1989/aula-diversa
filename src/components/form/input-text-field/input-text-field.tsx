@@ -11,6 +11,7 @@ const InputTextField = ({
   control,
   isMultiline = false,
   rows,
+  type,
   ...props
 }: FormFieldsProps) => (
   <Controller
@@ -19,6 +20,7 @@ const InputTextField = ({
     rules={{ required }}
     render={({ field: { onChange, onBlur, value } }) => (
       <TextField
+        type={type}
         className="w-full"
         label={label}
         placeholder={placeholder}
@@ -28,6 +30,8 @@ const InputTextField = ({
         onChange={onChange}
         onBlur={onBlur}
         value={value || ""}
+        revealPasswordAriaLabel="Mostrar contraseña"
+        canRevealPassword
         {...props}
       />
     )}

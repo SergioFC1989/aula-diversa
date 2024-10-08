@@ -1,4 +1,5 @@
-import { Separator, Spinner, Text } from "@fluentui/react";
+import { Spinner } from "@fluentui/react";
+import PageHeader from "../page-header/page-header";
 
 interface LoadingViewProps {
   title: string;
@@ -7,10 +8,7 @@ interface LoadingViewProps {
 
 const LoadingView = ({ title, message }: LoadingViewProps) => (
   <>
-    <Text variant="xLarge" className="text-base sm:text-lg">
-      {title}
-    </Text>
-    <Separator />
+    <PageHeader title={title} />
     <Spinner
       className="flex justify-start items-start"
       label={message}

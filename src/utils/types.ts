@@ -17,7 +17,14 @@ export interface AnnualPlanProps {
 }
 
 export type FormFieldsProps = {
-  type?: "text" | "dropdown" | "slider";
+  type?:
+    | "text"
+    | "dropdown"
+    | "slider"
+    | "date"
+    | "number"
+    | "password"
+    | "email";
   label?: string;
   name: string;
   placeholder?: string;

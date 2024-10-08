@@ -1,19 +1,19 @@
 import { IconButton, Separator, Text } from "@fluentui/react";
 
-interface TitleNavProps {
+interface PageHeaderProps {
   title?: string;
   isVisibleButtons?: boolean;
   onClickNavigateBack?: () => void;
 }
 
-const TitleNav = ({
+const PageHeader = ({
   title,
   isVisibleButtons = false,
   onClickNavigateBack,
-}: TitleNavProps) => (
+}: PageHeaderProps) => (
   <>
     <div className="w-full flex flex-col s:flex-row s:justify-between s:items-center">
-      <Text variant="xLarge" className="text-base sm:text-lg">
+      <Text variant="xxLargePlus" className="font-bold text-base sm:text-3xl">
         {title}
       </Text>
       {isVisibleButtons ? (
@@ -39,4 +39,4 @@ const TitleNav = ({
   </>
 );
 
-export default TitleNav;
+export default PageHeader;

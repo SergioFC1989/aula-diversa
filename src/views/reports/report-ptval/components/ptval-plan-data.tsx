@@ -2,7 +2,7 @@ import { PlanDataProps } from "@/utils/types";
 import { Separator, Text } from "@fluentui/react";
 
 interface PTVALPlanDataProps {
-  data: PlanDataProps[];
+  content: PlanDataProps[];
 }
 
 const renderDescription = (name: string, description: string) => (
@@ -14,12 +14,12 @@ const renderDescription = (name: string, description: string) => (
   </div>
 );
 
-const PTVALPlanData = ({ data }: PTVALPlanDataProps) => {
-  if (!data.length) return null;
+const PTVALPlanData = ({ content }: PTVALPlanDataProps) => {
+  if (!content.length) return null;
 
   return (
-    <div className="w-full flex flex-col px-3 gap-8">
-      {data.map((info, index) => (
+    <div className="w-full flex flex-col py-3 gap-8">
+      {content.map((info, index) => (
         <div
           key={index}
           className="flex flex-col print p-2 rounded-xl bg-gray-50"
