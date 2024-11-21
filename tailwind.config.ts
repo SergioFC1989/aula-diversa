@@ -6,7 +6,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/views/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -21,6 +21,19 @@ const config: Config = {
       },
       colors: {
         "primary-color": "#28a88f",
+      },
+      spacing: {
+        "100%": "100%",
+        "90%": "90%",
+        "80%": "80%",
+        "70%": "70%",
+        "60%": "60%",
+        "50%": "50%",
+        "40%": "40%",
+        "30%": "30%",
+        "20%": "20%",
+        "10%": "10%",
+        "5%": "5%",
       },
     },
   },
