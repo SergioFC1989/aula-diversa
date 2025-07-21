@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 import Logo from "@/assets/images/logo.png";
-import { AppProvider } from "@/context/app-context";
+import { AppProvider } from "@/lib/context/app-context";
 
 import Theme from "./theme";
 

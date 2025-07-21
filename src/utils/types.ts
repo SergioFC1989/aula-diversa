@@ -1,5 +1,5 @@
 import { IDropdownOption } from "@fluentui/react";
-import { Control, FieldValues, UseFormRegister } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 
 export interface AnnualPlanProps {
   "etapa educativa"?: string;
@@ -15,24 +15,6 @@ export interface AnnualPlanProps {
   "comunicacion verbal"?: string;
   observaciones?: string;
 }
-
-export type FormFieldsProps = {
-  type?: "text" | "dropdown" | "slider";
-  label?: string;
-  name: string;
-  placeholder?: string;
-  col?: number;
-  required?: boolean;
-  register?: UseFormRegister<FieldValues>;
-  control?: Control<FieldValues>;
-  min?: number;
-  max?: number;
-  step?: number;
-  options?: IDropdownOption<string | number>[];
-  rows?: number;
-  isMultiSelect?: boolean;
-  isMultiline?: boolean;
-};
 
 export type PlanDataProps = {
   ambito: string;
@@ -53,3 +35,19 @@ export type ReportStudentProps = {
 export type ResponseAnnualPlanProps = {
   ptval: ReportStudentProps | null;
 };
+
+export interface IDynamicFormField extends Partial<Pick<UseFormReturn, "control" | "register">> {
+  col?: number;
+  isMultiSelect?: boolean;
+  isMultiline?: boolean;
+  label?: string;
+  max?: number;
+  min?: number;
+  name: string;
+  options?: IDropdownOption[];
+  placeholder?: string;
+  required?: boolean;
+  rows?: number;
+  step?: number;
+  type?: "text" | "dropdown" | "slider";
+}

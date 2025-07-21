@@ -6,17 +6,13 @@ interface TitleNavProps {
   onClickNavigateBack?: () => void;
 }
 
-const TitleNav = ({
-  title,
-  isVisibleButtons = false,
-  onClickNavigateBack,
-}: TitleNavProps) => (
+const TitleNav = ({ title, isVisibleButtons = false, onClickNavigateBack }: TitleNavProps) => (
   <>
     <div className="w-full flex flex-col s:flex-row s:justify-between s:items-center">
       <Text variant="xLarge" className="text-base sm:text-lg">
         {title}
       </Text>
-      {isVisibleButtons ? (
+      {isVisibleButtons ?
         <div className="flex">
           <IconButton
             className="print:hidden"
@@ -33,7 +29,7 @@ const TitleNav = ({
             onClick={() => window.print()}
           />
         </div>
-      ) : null}
+      : null}
     </div>
     <Separator className="print" />
   </>

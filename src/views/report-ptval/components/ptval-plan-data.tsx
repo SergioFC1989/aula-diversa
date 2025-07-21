@@ -1,5 +1,6 @@
-import { PlanDataProps } from "@/utils/types";
 import { Separator, Text } from "@fluentui/react";
+
+import { PlanDataProps } from "@/utils/types";
 
 interface PTVALPlanDataProps {
   data: PlanDataProps[];
@@ -20,10 +21,7 @@ const PTVALPlanData = ({ data }: PTVALPlanDataProps) => {
   return (
     <div className="w-full flex flex-col px-3 gap-8">
       {data.map((info, index) => (
-        <div
-          key={index}
-          className="flex flex-col print p-2 rounded-xl bg-gray-50"
-        >
+        <div key={index} className="flex flex-col print p-2 rounded-xl bg-gray-50">
           {/* Información del ámbito */}
           <div className="flex flex-col">
             <Text variant="xLargePlus">{info.ambito}</Text>

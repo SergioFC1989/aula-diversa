@@ -2,8 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const OPTIONS_GEN_AI = {
   model: "gemini-1.5-flash",
-  systemInstruction:
-    "Eres un experto en el ámbito educacional en España y tienes en cuenta todas las leyes, ordenes y decretos del mismo",
+  systemInstruction: "Eres un experto en el ámbito educacional en España y tienes en cuenta todas las leyes, ordenes y decretos del mismo",
 };
 
 export const getGenerativeModelAI = () => {
@@ -18,12 +17,7 @@ export const getGenerativeModelAI = () => {
   return model;
 };
 
-export const apiRequest = (
-  url: string,
-  method: "GET" | "POST" = "GET",
-  body?: Record<string, unknown>,
-  signal?: AbortSignal
-) =>
+export const apiRequest = (url: string, method: "GET" | "POST" = "GET", body?: Record<string, unknown>, signal?: AbortSignal) =>
   fetch(url, {
     headers: {
       "Content-Type": "application/json",

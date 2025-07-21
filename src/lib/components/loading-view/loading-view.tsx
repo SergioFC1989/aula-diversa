@@ -11,12 +11,7 @@ const LoadingView = ({ title, message }: LoadingViewProps) => (
       {title}
     </Text>
     <Separator />
-    <Spinner
-      className="flex justify-start items-start"
-      label={message}
-      ariaLive="assertive"
-      labelPosition="right"
-    />
+    <Spinner className="flex justify-start items-start" label={message} ariaLive="assertive" labelPosition="right" />
   </>
 );
 

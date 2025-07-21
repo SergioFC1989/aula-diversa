@@ -1,19 +1,10 @@
-import React, {
-  createContext,
-  FC,
-  ReactNode,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
+import React, { createContext, FC, ReactNode, useContext, useMemo, useState } from "react";
 
 import { ResponseAnnualPlanProps } from "@/utils/types";
 
 interface AppContextProps {
   content: ResponseAnnualPlanProps | null;
-  setContent: React.Dispatch<
-    React.SetStateAction<ResponseAnnualPlanProps | null>
-  >;
+  setContent: React.Dispatch<React.SetStateAction<ResponseAnnualPlanProps | null>>;
 }
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);

@@ -2,12 +2,11 @@ import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
-import { AnnualPlanDefaultValues } from "../views/annual-form-plan/data";
-
-import { useAppContext } from "@/context/app-context";
+import { useAppContext } from "@/lib/context/app-context";
 import { generatePTVALSinglePlan } from "@/prompts/ptval-single-plan";
 import { apiRequest } from "@/services/api";
 import { sanitizerJSON } from "@/utils/sanitizers";
+import { AnnualPlanDefaultValues } from "@/views/annual-form-plan/data";
 
 export const useAnnualPlan = () => {
   const router = useRouter();
@@ -22,13 +21,9 @@ export const useAnnualPlan = () => {
     async (data: FieldValues) => {
       setIsLoading(true);
       try {
-        const response = await apiRequest(
-          "/api/gemini/generate-content-text",
-          "POST",
-          {
-            prompt: generatePTVALSinglePlan(data),
-          }
-        );
+        const response = await apiRequest("/api/gemini/generate-content-text", "POST", {
+          prompt: generatePTVALSinglePlan(data),
+        });
 
         const serializedResponse = {
           alumno: data,
@@ -49,7 +44,7 @@ export const useAnnualPlan = () => {
         setIsLoading(false);
       }
     },
-    [router, setContent]
+    [router, setContent],
   );
 
   const values = useMemo(
@@ -61,7 +56,7 @@ export const useAnnualPlan = () => {
       content,
       isLoading,
     }),
-    [content, control, handleSubmit, isLoading, onSubmit, reset]
+    [content, control, handleSubmit, isLoading, onSubmit, reset],
   );
 
   return values;

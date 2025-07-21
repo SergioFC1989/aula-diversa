@@ -1,24 +1,15 @@
-import { Slider } from "@fluentui/react";
+import { Slider as FSlider } from "@fluentui/react";
 import { Controller } from "react-hook-form";
 
-import { FormFieldsProps } from "@/utils/types";
+import { IDynamicFormField } from "@/utils/types";
 
-const InputSlider = ({
-  label,
-  name = "",
-  required = false,
-  control,
-  min,
-  max,
-  step,
-  ...props
-}: FormFieldsProps) => (
+const Slider = ({ label, name = "", required = false, control, min, max, step, ...props }: IDynamicFormField) => (
   <Controller
     control={control}
     name={name}
     rules={{ required }}
     render={({ field: { onChange, onBlur, value } }) => (
-      <Slider
+      <FSlider
         className="w-full"
         label={label}
         onChange={onChange}
@@ -33,4 +24,4 @@ const InputSlider = ({
   />
 );
 
-export default InputSlider;
+export default Slider;

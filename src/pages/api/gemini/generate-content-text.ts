@@ -1,12 +1,10 @@
 "use server";
 
-import { apiGenerateContentText } from "@/services/api";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const generateContentText = async (
-  req: NextApiRequest,
-  res: NextApiResponse
-) => {
+import { apiGenerateContentText } from "@/services/api";
+
+const generateContentText = async (req: NextApiRequest, res: NextApiResponse) => {
   const { prompt } = req.body;
 
   try {
